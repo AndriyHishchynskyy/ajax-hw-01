@@ -1,6 +1,6 @@
 $(function(){
     $('input[type=submit]').click(sendData);
-})
+});
 function sendData(e){
      e.preventDefault();
         if( !$('form')[0].checkValidity() ){
@@ -8,19 +8,19 @@ function sendData(e){
          return;
         }
      
-     $.ajax({
-         url:"https://formspree.io/andriyhischynskyy@gmail.com",
-         method: "POST",
-         data:{
+    $.ajax({
+        url:"https://formspree.io/andriyhischynskyy@gmail.com",
+        method: "POST",
+        data:{
              name: $('#full-name').val(),
              age: $('#age').val(),
-             incom: $('#incom').val(),
+             incom: $('#income').val(),
              male: $('#male').val(),
              female: $('#female').val(),
              telephone: $('#tel').val(),
              email: $('#email').val(),
              answer1: $('#dont-drinl-milk').val(),
-             answer2: $('#fat-0').val(),name : $('#').val(),
+             answer2: $('#fat-0').val(),
              answer3: $('#fat-1.5').val(),
              answer4: $('#fat-3.2').val(),
              important1: $('#cb-1').val(),
@@ -29,11 +29,10 @@ function sendData(e){
              important4: $('#cb-4').val(),
              message: $('#message').val()
             },
-         dataType: "json"
-         })
-         .done(function(){
+        dataType: "json"
+        })
+        .done(function(){
              $('form')[0].reset();
              $('#thanks').show();
-         
-     });
+        });
 }
